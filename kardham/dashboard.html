@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="fontawesome-free-5.15.3-web/css/all.css">
+    <link rel="stylesheet" href="css/dash.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <nav>
+                <img src="img/Logo-Kardham-Digital.png" title="logo" class="logo">
+                <div class="create">
+                    <input type="button" name="btn" value="+ Créer un ticket" id="btn_ticket">
+                    <i class="fa fa-search" aria-hidden="true" id="search"></i>
+                    <a href="#" class="login"> Matheo </a>
+                </div>
+
+            </nav>
+            <i class="fa fa-bars" id="button"></i>
+        </div>
+
+    </header>
+
+    <main class="links">
+        <div class="container">
+            <ul id="links">
+                <li class="active">Accueil</li>
+                <li>Tickets</li>
+                <li>Solutions</li>
+                <li>Utilisateurs</li>
+            </ul>
+        </div>
+    </main>
+
+    <main class="dashboard">
+        <div class="container">
+            <h2> DASHBOARD </h2>
+
+            <label for="dashboard" class="dash"> Nombre de tickets:
+
+                <select name="ticket" id="ticket">
+                    <option value="now"> Aujourd'hui</option>
+                    <option value="mois"> 1mois</option>
+                </select>
+
+            </label>
+        </div>
+    </main>
+
+
+    <main class="tickets">
+        <div class="container">
+
+            <main class="progress">
+
+                <h3 class="number"> Nombre de tickets par statut</h3>
+
+                <div class="first">
+                    <p>Nouveau ticket <span class="p"> 124 tickets </span> </p>
+
+                    <div class="progress_bar">
+                        <div id="progress_first" style="width:30%;"></div>
+                    </div>
+                    <span id="first"> 30%</span>
+
+                </div>
+
+
+                <div class="first">
+                    <p> En cours N1 <span class="p"> 12 tickets </span> </p>
+
+                    <div class="progress_bar">
+                        <div id="progress_two" style="width:12%;"></div>
+                    </div>
+                    <span id="two"> 12%</span>
+
+                </div>
+
+
+                <div class="first">
+                    <p> En attente Client <span class="p"> 37 tickets </span> </p>
+
+                    <div class="progress_bar">
+                        <div id="progress_three" style="width:41% ;"></div>
+                    </div>
+                    <span id="three"> 41%</span>
+
+                </div>
+
+
+                <div class="first">
+                    <p> Escale N2 <span class="p"> 124 tickets </span> </p>
+
+                    <div class="progress_bar">
+                        <div id="progress_four" style="width:20% ;"></div>
+                    </div>
+                    <span id="four"> 20%</span>
+
+                </div>
+
+
+                <div class="first">
+                    <p> Escale N3 <span class="p"> 35 tickets </span></p>
+
+                    <div class="progress_bar">
+                        <div id="progress_five" style="width:30%;"></div>
+                    </div>
+                    <span id="five"> 30%</span>
+
+                </div>
+
+            </main>
+
+            <main class="contact">
+                <h3 class="contact"> Nombre de tickets par contact</h3>
+
+                <div class="contact1">
+                    <img src="img/ellipse1.png" class="ellipse1">
+
+                    <img src="img/PS.png" id="ellipse1">
+
+                    <p class="contact1"> Patrick Sebastian <br> <span style="color:#F9423A ;">108</span> tickets</p>
+                </div>
+
+                <div class="contact2">
+                    <img src="img/ellipse2.png" class="ellipse2">
+
+                    <img src="img/KD.png" id="ellipse2">
+
+                    <p class="contact2"> kim Dolores <br> <span style="color:#F9423A ;">6</span> tickets</p>
+                </div>
+
+                <div class="contact3">
+                    <img src="img/ellipse3.png" class="ellipse3">
+
+                    <img src="img/MP.png" id="ellipse3">
+
+                    <p class="contact3"> Michael Patrone <br> <span style="color:#F9423A ;">44</span> tickets</p>
+                </div>
+
+                <div class="contact4">
+                    <img src="img/ellipse4.png" class="ellipse4">
+
+                    <img src="img/CB.png" id="ellipse4">
+
+                    <p class="contact4"> Cyril Boutors<br> <span style="color:#F9423A ;">12</span> tickets</p>
+                </div>
+
+                <div class="contact5">
+                    <img src="img/ellipse5.png" class="ellipse5">
+
+                    <img src="img/JR.png" id="ellipse5">
+
+                    <p class="contact5"> Jean Ramos <br> <span style="color:#F9423A ;">27</span> tickets</p>
+                </div>
+            </main>
+
+
+
+            <main class="object">
+                <h3 class="object1"> Nombre de tickets par objet </h3>
+
+                <div class="object1">
+                    <p class="object1"> Incident </p>
+
+                    <div id="object1">
+                        <ul id="object1"> 12</ul>
+                        <ul class="object1"> Tickets</ul>
+                    </div>
+                </div>
+
+                <div class="object2">
+                    <p class="object2"> Demande d'intervention curative </p>
+
+                    <div id="object2">
+                        <ul id="object2"> 35</ul>
+                        <ul class="object2"> Tickets</ul>
+                    </div>
+                </div>
+
+                <div class="object3">
+                    <p class="object3"> Demande de visite préventive </p>
+
+                    <div id="object3">
+                        <ul id="object3"> 65</ul>
+                        <ul class="object3"> Tickets</ul>
+                    </div>
+                </div>
+
+                <div class="object4">
+                    <p class="object4"> Demande de formation </p>
+
+                    <div id="object4">
+                        <ul id="object4"> 33</ul>
+                        <ul class="object4"> Tickets</ul>
+                    </div>
+                </div>
+
+            </main>
+
+
+
+
+
+            <section class="number_type">
+                <h3 class="type">Nombre de tickets par type</h3>
+
+                <div class="type1">
+                    <p class="type1">Vidéo-surveillance </p>
+
+                    <div id="type1">
+                        <ul id="type1"> 147</ul>
+                        <ul class="type1"> Tickets</ul>
+                    </div>
+                </div>
+
+
+                <div class="type2">
+                    <p class="type2">Contrôle d'accès </p>
+
+                    <div id="type2">
+                        <ul id="type2"> 12</ul>
+                        <ul class="type2"> Tickets</ul>
+                    </div>
+                </div>
+
+
+                <div class="type3">
+                    <p class="type3">Gestion des parkings </p>
+
+                    <div id="type3">
+                        <ul id="type3"> 41</ul>
+                        <ul class="type3"> Tickets</ul>
+                    </div>
+                </div>
+
+
+                <div class="type4">
+                    <p class="type4">Gestion smart office </p>
+
+                    <div id="type4">
+                        <ul id="type4"> 59</ul>
+                        <ul class="type4"> Tickets</ul>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="priority_tickets">
+                <h3 class="priority1">Nombre de tickets par priorité</h3>
+
+                <aside class="rounded_bar">
+
+                    <div class="rounded_bar1">
+
+                        <div role="rounded_bar1" aria-valuenow="22" aria-valuemin="0" aria-valuemax="100"
+                            style="--value:22;">
+                        </div>
+
+                        <div id="progress1">
+                            <p class="progress1">Tickets Critique </p> <br>
+                            <p id="progress1"> 54/125</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="rounded_bar1">
+
+                        <div role="rounded_bar2" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"
+                            style="--value:35;">
+                        </div>
+
+                        <div id="progress1">
+                            <p class="progress1">Tickets Haute </p> <br>
+                            <p id="progress1"> 78/125</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="rounded_bar1">
+
+                        <div role="rounded_bar3" aria-valuenow="44" aria-valuemin="0" aria-valuemax="100"
+                            style="--value:44;">
+                        </div>
+
+                        <div id="progress1">
+                            <p class="progress1">Tickets Moyenne </p> <br>
+                            <p id="progress1"> 85/125</p>
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="rounded_bar1">
+
+                        <div role="rounded_bar4" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100"
+                            style="--value:12;">
+                        </div>
+
+                        <div id="progress1">
+                            <p class="progress1">Tickets Faible </p> <br>
+                            <p id="progress1"> 24/125</p>
+                        </div>
+                    </div>
+                </aside>
+            </section>
+        </div>
+    </main>
+
+
+
+
+
+    <script>
+        const toggleBtn = documment.querySelector('....')
+        const toggleBtnIcon = documment.querySelector('....')
+
+        toggleBtn.onclick = function () {
+            dropDownMenu.classList.toggle('open')
+            const isOpen = dropDownMenu.classList.contains('open')
+
+            toggleBtnIcon.classList = isOpen
+                ? 'fa-solid fa-xmark'
+                : 'fa-solid fa-bars'
+        }
+    </script>
+</body>
+
+</html>

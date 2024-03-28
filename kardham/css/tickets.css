@@ -1,0 +1,239 @@
+@font-face {
+    font-family: 'Segoe UI';
+    src: url('../fonts/SegoeUI-BoldItalic.eot');
+    src: local('Segoe UI Bold Italic'), local('SegoeUI-BoldItalic'),
+        url('../fonts/SegoeUI-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/SegoeUI-BoldItalic.woff2') format('woff2'),
+        url('../fonts/SegoeUI-BoldItalic.woff') format('woff'),
+        url('../fonts/SegoeUI-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Segoe UI';
+    src: url('../fonts/SegoeUI.eot');
+    src: local('Segoe UI'), local('SegoeUI'),
+        url('../fonts/SegoeUI.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/SegoeUI.woff2') format('woff2'),
+        url('../fonts/SegoeUI.woff') format('woff'),
+        url('../fonts/SegoeUI.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Segoe UI';
+    src: url('../fonts/SegoeUI-SemiBold.eot');
+    src: local('Segoe UI Semibold'), local('SegoeUI-SemiBold'),
+        url('../fonts/SegoeUI-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/SegoeUI-SemiBold.woff2') format('woff2'),
+        url('../fonts/SegoeUI-SemiBold.woff') format('woff'),
+        url('../fonts/SegoeUI-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Segoe UI';
+    src: url('../fonts/SegoeUI-Light.eot');
+    src: local('Segoe UI Light'), local('SegoeUI-Light'),
+        url('../fonts/SegoeUI-Light.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/SegoeUI-Light.woff2') format('woff2'),
+        url('../fonts/SegoeUI-Light.woff') format('woff'),
+        url('../fonts/SegoeUI-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Segoe UI';
+    src: url('../fonts/SegoeUI-Bold.eot');
+    src: local('Segoe UI Bold'), local('SegoeUI-Bold'),
+        url('../fonts/SegoeUI-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/SegoeUI-Bold.woff2') format('woff2'),
+        url('../fonts/SegoeUI-Bold.woff') format('woff'),
+        url('../fonts/SegoeUI-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Segoe UI';
+    src: url('../fonts/SegoeUI-Italic.eot');
+    src: local('Segoe UI Italic'), local('SegoeUI-Italic'),
+        url('../fonts/SegoeUI-Italic.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/SegoeUI-Italic.woff2') format('woff2'),
+        url('../fonts/SegoeUI-Italic.woff') format('woff'),
+        url('../fonts/SegoeUI-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+
+        *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI';
+        }
+        .container{
+        width: 1360px;
+        height: auto;
+        padding: 0 16px;
+        margin: 0 auto;
+        }
+
+        body{
+        background-color:#EFF0F2 ;
+        width: 100%;
+        }
+        header.navbar{
+        height: 90px;
+        width: 100%;
+        background-color:#fff ;
+        align-items: center;
+        display: flex;
+        }
+
+        .navbar nav{
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+        justify-content: space-between;
+        } 
+
+        .navbar nav img.logo{
+        height: 28px;
+        width: 338px;
+        }
+        .navbar nav .create{
+        display: flex;
+        justify-content: center;
+        align-items: baseline;
+        }
+        .navbar nav input#btn_ticket{
+        height: 40px;
+        width: 224px;
+        font-size: 16px;
+        margin-right: 50px;
+        background-color: #F9423A;
+        border-radius: 5px;
+        color: #fff;
+        border: 0;
+        font-family:'Segoe UI Regular' ;
+        }
+        .navbar nav i#search{
+        height: 24px;
+        width: 24px;
+        width: 37px;
+        }
+        .navbar nav a.login{
+        text-decoration: none;
+        font-family: serif;
+        color: black;
+        font-size: 16px;
+        }
+        .navbar #button{
+        display: none;
+        }
+
+
+
+
+        main.links{
+            background-color: #F8F8F8;
+        }
+
+        main.links ul#links{
+        display: flex;
+        align-items: stretch;
+        height: 55px;
+        }
+        main.links ul#links li{
+        list-style: none;
+        margin-right: 37px;
+        transition: 0.5s;
+        font-family: 'Segoe UI';
+        display: flex;
+        align-items: center;
+        }
+        main.links ul#links li:hover{
+        border-bottom: 2px solid #F9423A;
+        cursor: pointer;
+        }
+        main.links ul#links li.active{
+        border-bottom: 2px solid #F9423A;
+        }
+
+
+
+        main.sidebar .account{
+            border-radius: 5px;
+            width: 282px;
+            height: 185px;
+            background-color: #fff;
+            padding: 16px;
+            display: flex;
+            margin-top: 30px;
+        }
+
+        main.sidebar .account #bar{
+             color: #F9423A;
+             display: flex;
+             align-items: flex-start;
+             width: 60px;
+        }
+
+        main.sidebar #account{
+            text-align: center;
+            line-height: 2;
+        }
+
+        main.sidebar #account img{
+            background-color:#E3E9F3;
+            border-radius: 100%;
+            height: 60px;
+            width: 60px;
+        }
+
+        main.sidebar p.name{
+            color: #9b9b9b;
+            height: 14px;
+            font-weight: 600;
+        }
+
+        main.sidebar input.logo{
+            height: 40px;
+            width: 240px;
+            color: #EFF0F2;
+            background-color: #F9423A;
+            border-radius: 4px;
+            border: 0;
+            font-weight: 600;
+            margin-top: 20px;
+        }
+
+        main.sidebar .elements{
+            background-color: #ffffff;
+            border-radius: 5px;
+            height: 489px;
+            width: 281px;
+            padding: 16px;
+            margin-top: 30px;
+        }
+
+        main.sidebar .elements h2{
+            color: #005151;
+            font-weight: 600;
+            height: 24px;
+        }
+
+        main.sidebar .elements p.elements{
+            font-weight: 400;
+            color: #9b9b9b;
+            padding: 0;
+            width: 100%;
+            height: auto;
+            margin: 15px auto;
+        }

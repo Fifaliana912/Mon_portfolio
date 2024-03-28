@@ -1,0 +1,164 @@
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/OpenSans-BoldItalic.woff2') format('woff2'),
+        url('../fonts/OpenSans-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/OpenSans-Italic.woff2') format('woff2'),
+        url('../fonts/OpenSans-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/OpenSans-Bold.woff2') format('woff2'),
+        url('../fonts/OpenSans-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/OpenSans-Light.woff2') format('woff2'),
+        url('../fonts/OpenSans-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/OpenSans-LightItalic.woff2') format('woff2'),
+        url('../fonts/OpenSans-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/OpenSans-Medium.woff2') format('woff2'),
+        url('../fonts/OpenSans-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/OpenSans-Regular.woff2') format('woff2'),
+        url('../fonts/OpenSans-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/OpenSans-MediumItalic.woff2') format('woff2'),
+        url('../fonts/OpenSans-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/OpenSans-SemiBold.woff2') format('woff2'),
+        url('../fonts/OpenSans-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/OpenSans-SemiBoldItalic.woff2') format('woff2'),
+        url('../fonts/OpenSans-SemiBoldItalic.woff') format('woff');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+body{
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans';
+    font-size: 14px;
+}
+
+
+section.login{
+    background: rgb(8,129,104);
+    background: radial-gradient(circle, rgba(8,129,104,1) 0%, rgba(0,81,81,1) 100%);
+    height: 100vh;
+    width: 100%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.record{
+    border-radius: 10px;
+    width: 410px;
+    height: 392px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.record img.logo{
+    height: 30px;
+    width: 220px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 40px 0 0 0;
+    display: flex;
+}
+.record p.text{
+    text-align: center;
+    font-family:'Segoe UI','OpenSans-Regular';
+    width: 286px;
+    margin: 0 auto;
+    padding: 32px 0 25px 0;
+}
+
+.record input#name, input#password, input#connect{
+    height: 40px;
+    width: 300px;
+    margin: 0 55px;
+    border-radius: 5px;
+    padding: 0 10px;
+    border: 1px solid #21664c2e;
+}
+
+.record input#password{
+    margin: 14px 55px;
+}
+
+.record input#connect{
+    background-color:#F9423A;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    transition: transform 1s;
+}
+
+.record a#mdp{
+    text-decoration: none;
+    color: #F9423A;
+    display: flex;
+    justify-content: flex-end;
+    padding: 21px 55px 0px 0px;
+}
+.record input#connect:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+

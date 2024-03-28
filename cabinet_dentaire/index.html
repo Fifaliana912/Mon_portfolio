@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/app.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="sass/scroll.scss">
+    <link rel="stylesheet" href="sass/icon.scss">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Cabinet dentaire</title>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="img">
+                <img src="img/BRAND LOGO.svg" alt="logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="">L’ÉQUIPE</a></li>
+                    <li><a href="">LE CABINET</a></li>
+                    <li><a href="">NOS CONSEILS</a></li>
+                    <li><a href="">VIDÉOS</a></li>
+                    <li><a href="">CONTACT</a></li>
+                </ul>
+            </nav>
+            <div class="contact_phone">
+                <a href="" class="icon_phone"><span class="icon-phone"></span></a>
+                <a href="" class="numero">0800 123 456</a>
+            </div>
+            <span class="icon-bars" id="burgerMenu"></span>
+        </div>
+    </header>
+
+    <section>
+        <div class="container">
+            <div class="take_rdv">
+                <div class="owl-carousel owl-theme" id="carousel">
+                    <div class="item"><img src="img/carousel1.png" class="carousel_img" /></div>
+                    <div class="item"><img src="img/carousel2.jpg" class="carousel_img" /></div>
+                    <div class="item"><img src="img/carousel3.jpg" class="carousel_img" /></div>
+                    <div class="item"><img src="img/carousel4.jpg" class="carousel_img" /></div>
+                </div>
+                <div class="principale">
+                    <img src="img/principal.png" />
+                </div>
+                <div class="rendez-vous">
+                    <input type="button" name="rendez-vous" class="rdv" value="Prendre rendez-vous">
+                </div>
+            </div>
+
+            <div class="pubVideo">
+                <div class="textPub" data-aos="fade-up" data-aos-duration="4000"
+                    data-aos-anchor-placement="bottom-bottom">
+                    <h4>Nous créons des sourires parfaits</h4>
+                    <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Tortor, eget enim, risus dictum neque at.
+                        Pellentesque fames blandit curabitur maecenas nulla ut.
+                        Quis lectus tempus et odio augue erat et commodo.
+                        Diam aliquet amet, eleifend luctus arcu ut dui ut.
+                    </p>
+                </div>
+                <div class="video" data-aos="fade-left" data-aos-duration="4000">
+                    <video class="video_1" src="img/video.mp4" controls> </video>
+                    <a href="" class="playVideo"><span class="icon-Play play"></span></a>
+                </div>
+            </div>
+
+            <div class="expertise" data-aos="zoom-in-up" data-aos-duration="4000">
+                <h3 class="titre_1">Notre expertise au service de votre sourire</h3>
+                <div id="expertise">
+                    <div class="expertise_1">
+                        <img src="img/svg1.svg" class="exp_1" />
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Tortor, eget enim, risus dictum neque at.
+                            Pellentesque fames blandit curabitur maecenas
+                        </p>
+                    </div>
+                    <div class="expertise_2">
+                        <img src="img/svg2.svg" class="exp_2" />
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Tortor, eget enim, risus dictum neque at.
+                            Pellentesque fames blandit curabitur maecenas
+                        </p>
+                    </div>
+                    <div class="expertise_3">
+                        <img src="img/svg3.svg" class="exp_3" />
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Tortor, eget enim, risus dictum neque at.
+                            Pellentesque fames blandit curabitur maecenas
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="conseils scroll">
+                <h3 class="titre_2">Nos fiches conseils</h3>
+                <div class="ficheConseils">
+                    <div class="conseils_1" data-aos="flip-left" data-aos-duration="4000">
+                        <a href="" class="conseils_1">SOINS & HYGIENE</a>
+                        <div class="categorie_1">
+                            <img src="img/conseil1.png" class="categorie_1" />
+                            <div class="textConseils_1">
+                                <h5 class="categorie_1">Nom de la fiche conseil</h5>
+                                <p class="categorie_1">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    Leo aliquam ante turpis congue et nulla dolor euismod.
+                                    Porta id ultrices sit cras scelerisque et.
+                                </p>
+                                <a href="" class="categorie_1">LIRE LA SUITE</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="conseils_2" data-aos="flip-left" data-aos-duration="3500">
+                        <a href="" class="conseils_2">SOINS & HYGIENE</a>
+                        <div class="categorie_2">
+                            <img src="img/conseil2.png" class="categorie_2" />
+                            <div class="textConseils_2">
+                                <h5 class="categorie_2">Nom de la fiche conseil</h5>
+                                <p class="categorie_2">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    Leo aliquam ante turpis congue et nulla dolor euismod.
+                                    Porta id ultrices sit cras scelerisque et.
+                                </p>
+                                <a href="" class="categorie_2">LIRE LA SUITE</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="conseils_3" data-aos="flip-left" data-aos-duration="3500">
+                        <a href="" class="conseils_3">SOINS & HYGIENE</a>
+                        <div class="categorie_3">
+                            <img src="img/conseil3.png" class="categorie_3" />
+                            <div class="textConseils_3">
+                                <h5 class="categorie_3">Nom de la fiche conseil</h5>
+                                <p class="categorie_3">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    Leo aliquam ante turpis congue et nulla dolor euismod.
+                                    Porta id ultrices sit cras scelerisque et.
+                                </p>
+                                <a href="" class="categorie_3">LIRE LA SUITE</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="" class="fiche">VOIR TOUTES NOS FICHES</a>
+            </div>
+
+            <div class="pubConseils scroll">
+                <h3 class="titre_3">Nos Vidéos</h3>
+                <div class="lesVideos">
+                    <div class="video" data-aos="zoom-in" data-aos-duration="3500">
+                        <video class="video_1" src="img/video2.mp4" controls> </video>
+                        <a href="" class="playVideo"><span class="icon-Play play"></span></a>
+                    </div>
+                    <div class="video" data-aos="zoom-in" data-aos-duration="3500">
+                        <video class="video_2" src="img/video.mp4" controls> </video>
+                        <a href="" class="playVideo"><span class="icon-Play play"></span></a>
+                    </div>
+                </div>
+                <a href="" class="lesVideos">VOIR TOUTE NOS VIDEOS</a>
+            </div>
+        </div>
+        <div class="serviceGarde scroll" data-aos="animation">
+            <div class="infoGarde">
+                <div class="casUrgence">
+                    <img src="img/urgences.svg" />
+                    <p>En cas d’urgence dentaire.Vous pouvez nous joindre au</p>
+                    <span>06 13 18 20 56</span>
+                </div>
+                <div class="numeroGarde">
+                    <h3 class="titre_4">Service de Garde</h3>
+                    <p class="text">Un service de garde est organisé les dimanches et jours fériés par le Conseil de
+                        l'Ordre
+                        Départemental des Chirurgiens-Dentistes.
+                        Vous trouverez les coordonnées du dentiste de garde dans votre quotidien régional ou en
+                        téléphonant au commissariat/gendarmerie de votre ville.
+                    </p>
+                    <div class="jour_1">
+                        <h5 class="jour_1">Samedi 25</h5>
+                        <p>Dr Clerc Sandrine(tel:02.40.73.71.28)</p>
+                    </div>
+                    <div class="jour_2">
+                        <h5 class="jour_2">Samedi 26</h5>
+                        <p>Dr Lemeillet Patrick(tel:02.40.63.56.34)</p>
+                    </div>
+                    <div class="jour_3">
+                        <h5 class="jour_3">Samedi 1er Janvier et Dimanche 2 Janvier</h5>
+                        <p>Dr POUCH TORTIGER Daphné(tel:02.40.47.82.60)</p>
+                    </div>
+                    <div class="jour_4">
+                        <h5 class="jour_4">Samedi 9 Janvier</h5>
+                        <p>Dr LOISEAU-KERCRET Lydiane(tel:02.51.83.99.90)</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="sendMess">
+            <div class="container">
+                <div class="formulaire_first" data-aos="fade-right" data-aos-duration="3500">
+                    <div class="formulaire">
+                        <h5 class="contact">Contactez-nous</h5>
+                        <input type="text" class="nom" value="Nom">
+                        <input type="e-mail" class="mail" value="Email">
+                        <textarea placeholder="Message"></textarea>
+                        <button type="submit" value="ENVOYEZ LE MESSAGE"> ENVOYEZ LE MESSAGE</button>
+                    </div>
+                </div>
+
+                <div class="personnel" data-aos="animation" data-aos-duration="3000">
+                    <div class="personnel_1">
+                        <div class="img_1">
+                            <img src="img/Image-user 1.png" class="personnel_1" />
+                        </div>
+                        <p>Dr Franck Meyer</p>
+                        <span>Chirurgien dentiste</span>
+                    </div>
+
+                    <div class="personnel_2">
+                        <div class="img_2">
+                            <img src="img/Image-user 2.png" class="personnel_2" />
+                        </div>
+                        <p>Anais</p>
+                        <span>Assistante dentaire</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="footerFirst">
+            <div class="imgLogo">
+                <img src="img/footer_logo.png" class="logo" />
+            </div>
+            <div class="footerInfo">
+                <div class="horaire">
+                    <h6 class="sousTitre_1">Horaire d’ouverture</h6>
+                    <p>
+                        Du lundi au vendredi 24h/24h 7 Jours sur 7
+                        Votre cabinet vous recçoit qu’il pleuve neige ou vente. Mais n’oubliez pas surtout de
+                        prendre votre rdv
+                    </p>
+                    <button type="submit" class="rdv">PRENDRE RENDEZ-VOUS</button>
+                </div>
+
+                <div class="propos">
+                    <div class="Propos">
+                        <h6 class="sousTitre_2">A propos</h6>
+                        <a href="">Conditions Générales</a>
+                        <a href="">Utilisation Mentions légales</a>
+                        <a href="">Charte de confidentialité</a>
+                        <a href="">Charte déontologique</a>
+                        <a href="">Ordre national</a>
+                        <a href="">Annuaires chirurgien dentistes </a>
+                    </div>
+                </div>
+
+                <div class="conseils">
+                    <h6 class="sousTitre_3">Fiches conseils</h6>
+                    <a href="">Pourquoi faire un detartrage régulier</a>
+                    <a href="">Pourquoi faire un detartrage régulier</a>
+                    <a href="">Pourquoi faire un detartrage régulier</a>
+                    <a href="">Pourquoi faire un detartrage régulier</a>
+                    <a href="">Pourquoi faire un detartrage régulier</a>
+                    <a href="">Pourquoi faire un detartrage régulier</a>
+                </div>
+
+                <div class="galerie">
+                    <h6 class="sousTitre_4">Galerie</h6>
+                    <div class="imgGalerie">
+                        <img src="img/Image-user 2f.png" class="galerie_1" />
+                        <img src="img/conseil1.png" class="galerie_2" />
+                        <img src="img/galerie3.png" class="galerie_3" />
+                        <img src="img/carousel1.png" class="galerie_4" />
+                        <img src="img/Image-user 3.png" class="galerie_5" />
+                        <img src="img/garde_urgences.png" class="galerie_6" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footerLast">
+            <div class="auteur">
+                <img src="img/logo_ufsbd 1.png" class="auteur_1" />
+                <img src="img/Logo-reduit-footer 1.png" class="auteur_2" />
+                <p>
+                    Le site du cabinet dentaire a été réalisé par Webdentiste.fr
+                </p>
+            </div>
+            <div class="liens">
+                <a href="">Accueil</a>
+                <a href="">L’équipe</a>
+                <a href="">Le cabinet</a>
+                <a href="">Fiches Conseils</a>
+                <a href="">Vidéos</a>
+                <a href="">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <!-- <script> AOS.init(); </script> -->
+    <script src="script.js"></script>
+</body>
+
+</html>

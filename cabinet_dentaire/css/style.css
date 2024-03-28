@@ -1,0 +1,1556 @@
+/**
+ * Owl Carousel v2.3.4
+ * Copyright 2013-2018 David Deutsch
+ * Licensed under: SEE LICENSE IN https://github.com/OwlCarousel2/OwlCarousel2/blob/master/LICENSE
+ */
+/*
+ *  Owl Carousel - Core
+ */
+.owl-carousel {
+  display: none;
+  width: 100%;
+  -webkit-tap-highlight-color: transparent;
+  /* position relative and z-index fix webkit rendering fonts issue */
+  position: relative;
+  z-index: 1;
+}
+
+.owl-carousel .owl-stage {
+  position: relative;
+  -ms-touch-action: pan-Y;
+  touch-action: manipulation;
+  -moz-backface-visibility: hidden;
+  /* fix firefox animation glitch */
+}
+
+.owl-carousel .owl-stage:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+.owl-carousel .owl-stage-outer {
+  position: relative;
+  overflow: hidden;
+  /* fix for flashing background */
+  -webkit-transform: translate3d(0px, 0px, 0px);
+}
+
+.owl-carousel .owl-wrapper,
+.owl-carousel .owl-item {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+}
+
+.owl-carousel .owl-item {
+  position: relative;
+  min-height: 1px;
+  float: left;
+  -webkit-backface-visibility: hidden;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+.owl-carousel .owl-item img {
+  display: block;
+  width: 100%;
+}
+
+.owl-carousel .owl-nav.disabled,
+.owl-carousel .owl-dots.disabled {
+  display: none;
+}
+
+.owl-carousel .owl-nav .owl-prev,
+.owl-carousel .owl-nav .owl-next,
+.owl-carousel .owl-dot {
+  cursor: pointer;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.owl-carousel .owl-nav button.owl-prev,
+.owl-carousel .owl-nav button.owl-next,
+.owl-carousel button.owl-dot {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0 !important;
+  font: inherit;
+}
+
+.owl-carousel.owl-loaded {
+  display: block;
+}
+
+.owl-carousel.owl-loading {
+  opacity: 0;
+  display: block;
+}
+
+.owl-carousel.owl-hidden {
+  opacity: 0;
+}
+
+.owl-carousel.owl-refresh .owl-item {
+  visibility: hidden;
+}
+
+.owl-carousel.owl-drag .owl-item {
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.owl-carousel.owl-grab {
+  cursor: move;
+  cursor: grab;
+}
+
+.owl-carousel.owl-rtl {
+  direction: rtl;
+}
+
+.owl-carousel.owl-rtl .owl-item {
+  float: right;
+}
+
+/* No Js */
+.no-js .owl-carousel {
+  display: block;
+}
+
+/*
+ *  Owl Carousel - Animate Plugin
+ */
+.owl-carousel .animated {
+  animation-duration: 1000ms;
+  animation-fill-mode: both;
+}
+
+.owl-carousel .owl-animated-in {
+  z-index: 0;
+}
+
+.owl-carousel .owl-animated-out {
+  z-index: 1;
+}
+
+.owl-carousel .fadeOut {
+  animation-name: fadeOut;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/*
+ * 	Owl Carousel - Auto Height Plugin
+ */
+.owl-height {
+  transition: height 500ms ease-in-out;
+}
+
+/*
+ * 	Owl Carousel - Lazy Load Plugin
+ */
+.owl-carousel .owl-item {
+  /**
+            This is introduced due to a bug in IE11 where lazy loading combined with autoheight plugin causes a wrong
+            calculation of the height of the owl-item that breaks page layouts
+         */
+}
+
+.owl-carousel .owl-item .owl-lazy {
+  opacity: 0;
+  transition: opacity 400ms ease;
+}
+
+.owl-carousel .owl-item .owl-lazy[src^=""], .owl-carousel .owl-item .owl-lazy:not([src]) {
+  max-height: 0;
+}
+
+.owl-carousel .owl-item img.owl-lazy {
+  transform-style: preserve-3d;
+}
+
+/*
+ * 	Owl Carousel - Video Plugin
+ */
+.owl-carousel .owl-video-wrapper {
+  position: relative;
+  height: 100%;
+  background: #000;
+}
+
+.owl-carousel .owl-video-play-icon {
+  position: absolute;
+  height: 80px;
+  width: 80px;
+  left: 50%;
+  top: 50%;
+  margin-left: -40px;
+  margin-top: -40px;
+  background: url("owl.video.play.png") no-repeat;
+  cursor: pointer;
+  z-index: 1;
+  -webkit-backface-visibility: hidden;
+  transition: transform 100ms ease;
+}
+
+.owl-carousel .owl-video-play-icon:hover {
+  -ms-transform: scale(1.3, 1.3);
+  transform: scale(1.3, 1.3);
+}
+
+.owl-carousel .owl-video-playing .owl-video-tn,
+.owl-carousel .owl-video-playing .owl-video-play-icon {
+  display: none;
+}
+
+.owl-carousel .owl-video-tn {
+  opacity: 0;
+  height: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: opacity 400ms ease;
+}
+
+.owl-carousel .owl-video-frame {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+}
+@font-face {
+  font-family: "icomoon";
+  src: url("../fonts/icomoon.eot?inhddg");
+  src: url("../fonts/icomoon.eot?inhddg#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?inhddg") format("truetype"), url("../fonts/icomoon.woff?inhddg") format("woff"), url("../fonts/icomoon.svg?inhddg#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+[class^=icon-], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icomoon" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-bars:before {
+  content: "\e902";
+}
+
+.icon-Play:before {
+  content: "\e900";
+}
+
+.icon-phone:before {
+  content: "\e901";
+}
+@media screen and (max-width: 1024px) {
+  header .container {
+    position: relative;
+  }
+  header .img {
+    z-index: 1;
+  }
+  header span.icon-bars {
+    display: block !important;
+  }
+  header nav ul {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    border-radius: 5px;
+    justify-content: center;
+    flex-direction: column;
+    transform: translateY(-500px);
+    left: 0;
+    position: fixed;
+    padding: 0 7%;
+    height: 250px;
+    background: #F0F0F0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  header .contact_phone {
+    display: none !important;
+  }
+  section .pubVideo {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+}
+body.sidebar nav ul {
+  transform: translateY(0px);
+  transition: 0.5s;
+}
+
+@media screen and (max-width: 500px) {
+  header nav ul {
+    transform: translateY(-1000px);
+    text-align: center;
+  }
+}
+[data-aos=animation] {
+  opacity: 0;
+  transition: 0.3s;
+  transform: translateY(-100px);
+}
+[data-aos=animation].aos-animate {
+  opacity: 1;
+  transform: translateY(0px);
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("../fonts/Raleway-BlackItalic.woff2") format("woff2"), url("../fonts/Raleway-BlackItalic.woff") format("woff");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("../fonts/Raleway-Black.woff2") format("woff2"), url("../fonts/Raleway-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("../fonts/Raleway-Bold.woff2") format("woff2"), url("../fonts/Raleway-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("../fonts/Raleway-BoldItalic.woff2") format("woff2"), url("../fonts/Raleway-BoldItalic.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("../fonts/Raleway-ExtraBoldItalic.woff2") format("woff2"), url("../fonts/Raleway-ExtraBoldItalic.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("../fonts/Raleway-ExtraBold.woff2") format("woff2"), url("../fonts/Raleway-ExtraBold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("../fonts/Raleway-ExtraLight.woff2") format("woff2"), url("../fonts/Raleway-ExtraLight.woff") format("woff");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("../fonts/Raleway-ExtraLightItalic.woff2") format("woff2"), url("../fonts/Raleway-ExtraLightItalic.woff") format("woff");
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("../fonts/Raleway-Italic.woff2") format("woff2"), url("../fonts/Raleway-Italic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("../fonts/Raleway-Light.woff2") format("woff2"), url("../fonts/Raleway-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("../fonts/Raleway-Medium.woff2") format("woff2"), url("../fonts/Raleway-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("../fonts/Raleway-LightItalic.woff2") format("woff2"), url("../fonts/Raleway-LightItalic.woff") format("woff");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("../fonts/Raleway-MediumItalic.woff2") format("woff2"), url("../fonts/Raleway-MediumItalic.woff") format("woff");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("../fonts/Raleway-SemiBold.woff2") format("woff2"), url("../fonts/Raleway-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("../fonts/Raleway-Regular.woff2") format("woff2"), url("../fonts/Raleway-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("../fonts/Raleway-SemiBoldItalic.woff2") format("woff2"), url("../fonts/Raleway-SemiBoldItalic.woff") format("woff");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("../fonts/Raleway-Thin.woff2") format("woff2"), url("../fonts/Raleway-Thin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("../fonts/Raleway-ThinItalic.woff2") format("woff2"), url("../fonts/Raleway-ThinItalic.woff") format("woff");
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Black.woff2") format("woff2"), url("../fonts/Montserrat-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-BlackItalic.woff2") format("woff2"), url("../fonts/Montserrat-BlackItalic.woff") format("woff");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-BoldItalic.woff2") format("woff2"), url("../fonts/Montserrat-BoldItalic.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-ExtraBold.woff2") format("woff2"), url("../fonts/Montserrat-ExtraBold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/ontserrat-ExtraBoldItalic.woff2") format("woff2"), url("../fonts/Montserrat-ExtraBoldItalic.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-ExtraLight.woff2") format("woff2"), url("../fonts/Montserrat-ExtraLight.woff") format("woff");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-ExtraLightItalic.woff2") format("woff2"), url("../fonts/Montserrat-ExtraLightItalic.woff") format("woff");
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Italic.woff2") format("woff2"), url("../fonts/Montserrat-Italic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Light.woff2") format("woff2"), url("../fonts/Montserrat-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Medium.woff2") format("woff2"), url("../fonts/Montserrat-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-LightItalic.woff2") format("woff2"), url("../fonts/Montserrat-LightItalic.woff") format("woff");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-MediumItalic.woff2") format("woff2"), url("../fonts/Montserrat-MediumItalic.woff") format("woff");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Regular.woff2") format("woff2"), url("../fonts/Montserrat-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-SemiBold.woff2") format("woff2"), url("../fonts/Montserrat-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-SemiBoldItalic.woff2") format("woff2"), url("../fonts/Montserrat-SemiBoldItalic.woff") format("woff");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Thin.woff2") format("woff2"), url("../fonts/Montserrat-Thin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-ThinItalic.woff2") format("woff2"), url("../fonts/Montserrat-ThinItalic.woff") format("woff");
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+section .serviceGarde .numeroGarde h3, section .pubConseils h3, section .conseils h3.titre_2, section h3[class*=titre_1] {
+  color: #303030;
+  font-weight: 700;
+  font-size: 25px;
+  text-align: center;
+}
+
+footer .footerFirst .footerInfo .horaire button, section .sendMess .container .formulaire button, section .pubConseils a.lesVideos, section .conseils a.fiche, section .take_rdv .rendez-vous input {
+  width: 286px;
+  height: 66px;
+  font-weight: 700;
+  border: none;
+  padding: 12px;
+  background: #F95C55;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Raleway";
+  list-style-type: none;
+  text-decoration: none;
+}
+
+.container {
+  padding: 0 16px;
+  width: 1300px;
+  margin: 0 auto;
+  height: auto;
+}
+@media screen and (max-width: 1300px) {
+  .container {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .container {
+    width: 100%;
+  }
+}
+
+body,
+html {
+  width: 100%;
+  background: #ffffff;
+  overflow-x: hidden;
+}
+@media screen and (max-width: 1300px) {
+  body,
+  html {
+    width: 100%;
+  }
+}
+
+header .container {
+  display: flex;
+  height: 100px;
+  justify-content: space-between;
+  align-items: center;
+}
+header nav ul {
+  display: flex;
+  gap: 30px;
+}
+header nav ul a {
+  color: #303030;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 17px 10px;
+}
+header nav ul a:hover {
+  background: #F95C55;
+  transition: 0.3s;
+  border-radius: 3px;
+  color: #ffffff;
+}
+header .contact_phone {
+  border: 1px solid #828282;
+  width: 185px;
+  height: 41px;
+  align-items: center;
+  display: flex;
+}
+header .contact_phone .icon_phone {
+  width: 30px;
+  border-right: 1px solid #828282;
+  display: flex;
+  justify-content: center;
+  color: #303030;
+}
+header .contact_phone .icon_phone:hover {
+  background: #F95C55;
+  padding: 12px 10px;
+}
+header .contact_phone .numero:hover, header .contact_phone .icon_phone:hover {
+  transition: 0.3s;
+  color: #ffffff;
+}
+header .contact_phone .numero {
+  color: #303030;
+  font-family: "Montserrat";
+  font-weight: 600;
+  width: 153px;
+  display: flex;
+  justify-content: center;
+}
+header .contact_phone .numero:hover {
+  background: #F95C55;
+  padding: 12px;
+}
+header span.icon-bars {
+  display: none;
+  font-size: 30px;
+}
+
+section .take_rdv {
+  position: relative;
+  width: 100%;
+  height: 582px;
+}
+@media screen and (max-width: 500px) {
+  section .take_rdv {
+    height: 350px;
+  }
+}
+section .take_rdv #carousel {
+  position: absolute;
+  height: auto;
+}
+@media screen and (max-width: 500px) {
+  section .take_rdv #carousel {
+    height: 250px;
+  }
+}
+section .take_rdv #carousel img.carousel_img {
+  height: 582px;
+  object-fit: cover;
+}
+@media screen and (max-width: 500px) {
+  section .take_rdv #carousel img.carousel_img {
+    height: 350px;
+  }
+}
+section .take_rdv .principale {
+  width: 30%;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 23%;
+}
+@media screen and (max-width: 1024px) {
+  section .take_rdv .principale {
+    width: 40%;
+  }
+}
+@media screen and (max-width: 500px) {
+  section .take_rdv .principale {
+    width: 50%;
+  }
+}
+section .take_rdv .principale img {
+  width: 100%;
+}
+section .take_rdv .rendez-vous input {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  margin: 0 auto;
+  right: 0;
+  bottom: -33px;
+}
+@media screen and (max-width: 1024px) {
+  section .take_rdv .rendez-vous input {
+    width: 190px;
+    height: 40px;
+    bottom: -20px;
+  }
+}
+section .take_rdv .rendez-vous input:hover {
+  cursor: pointer;
+  transition: 0.3s;
+  background: #303030;
+}
+@media screen and (max-width: 500px) {
+  section .take_rdv .rendez-vous input {
+    width: 50%;
+  }
+}
+section .pubVideo {
+  display: flex;
+  height: 442px;
+  width: 100%;
+}
+section .pubVideo .textPub {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  justify-content: center;
+}
+@media screen and (max-width: 1024px) {
+  section .pubVideo .textPub {
+    width: 100%;
+    margin-top: 40px;
+  }
+}
+@media screen and (max-width: 500px) {
+  section .pubVideo .textPub {
+    gap: 15px;
+  }
+}
+section .pubVideo .textPub h4 {
+  font-weight: 300;
+  font-size: 49px;
+  color: #303030;
+}
+section .pubVideo .textPub p.text {
+  font-weight: 400;
+  font-size: 16px;
+  color: #303030;
+}
+@media screen and (max-width: 1024px) {
+  section .pubVideo .textPub p.text {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+section .pubVideo .video {
+  width: 451px;
+  justify-content: center;
+  display: flex;
+  height: 278px;
+  margin: auto auto;
+  position: relative;
+}
+@media screen and (max-width: 1024px) {
+  section .pubVideo .video {
+    height: 200px;
+  }
+}
+@media screen and (max-width: 500px) {
+  section .pubVideo .video {
+    width: 100%;
+  }
+}
+section .pubVideo .video video.video_1 {
+  width: 100%;
+}
+section .pubVideo .video a.playVideo {
+  position: absolute;
+  top: 35%;
+  bottom: 0;
+  margin: 0 auto;
+  font-size: 70px;
+  color: #F95C55;
+}
+@media screen and (max-width: 500px) {
+  section .pubVideo {
+    gap: 30px;
+  }
+}
+section .expertise {
+  background: #F0F0F0;
+  width: 100%;
+  height: 492px;
+}
+section .expertise h3.titre_1 {
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+section .expertise #expertise {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+section .expertise #expertise div[class*=expertise_] {
+  width: 30%;
+  text-align: center;
+  height: 350px;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+@media screen and (max-width: 500px) {
+  section .expertise #expertise div[class*=expertise_] {
+    width: 40%;
+    gap: 10px;
+  }
+}
+section .expertise #expertise img[class*=exp_] {
+  width: 135px;
+  height: 135px;
+  margin: 0 auto;
+}
+section .expertise #expertise p {
+  width: 80%;
+  margin: 0 auto;
+}
+@media screen and (max-width: 500px) {
+  section .expertise #expertise {
+    flex-direction: column;
+  }
+  section .expertise #expertise p {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  section .expertise {
+    margin-top: 25px;
+  }
+}
+@media screen and (max-width: 500px) {
+  section .expertise {
+    margin-top: 10rem;
+    height: auto;
+  }
+}
+section .conseils {
+  width: 100%;
+  height: 743px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+section .conseils h3.titre_2 {
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@media screen and (max-width: 1024px) {
+  section .conseils h3.titre_2 {
+    margin: 20px 0;
+  }
+}
+section .conseils .ficheConseils {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+section .conseils .ficheConseils div[class*=conseils_] {
+  width: 353px;
+  position: relative;
+  height: 410px;
+}
+section .conseils .ficheConseils div[class*=conseils_] a[class*=conseils_] {
+  position: absolute;
+  width: 216px;
+  height: 44.94px;
+  background: #2D2D2D;
+  padding: 10px 13px;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: -21px;
+}
+section .conseils .ficheConseils div[class*=conseils_] a[class*=conseils_]:hover {
+  background: #F95C55;
+  transition: 0.3s;
+}
+section .conseils .ficheConseils div[class*=conseils_] div[class*=categorie_] {
+  display: flex;
+  flex-direction: column;
+  width: 353px;
+  height: 408px;
+  border: 1px solid #EEEEEE;
+  gap: 10px;
+}
+section .conseils .ficheConseils div[class*=conseils_] div[class*=categorie_] img[class*=categorie_] {
+  width: 353px;
+  height: 221px;
+}
+section .conseils .ficheConseils div[class*=textConseils_] {
+  flex-direction: column;
+  width: 100%;
+  padding: 0 20px;
+  display: flex;
+  gap: 15px;
+}
+section .conseils .ficheConseils div[class*=textConseils_] p {
+  color: rgba(48, 42, 45, 0.6);
+  font-weight: 400;
+  font-size: 14px;
+}
+section .conseils .ficheConseils div[class*=textConseils_] a {
+  font-weight: 700;
+  font-size: 12px;
+  color: #F95C55;
+}
+@media screen and (max-width: 1024px) {
+  section .conseils .ficheConseils {
+    flex-direction: column;
+    gap: 50px;
+    margin: 0 auto;
+  }
+}
+section .conseils a.fiche {
+  margin: 0 auto;
+  align-items: center;
+}
+section .conseils a.fiche:hover {
+  background: #2D2D2D;
+  transition: 0.3s;
+}
+section .pubConseils {
+  height: 708px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #f0f0f0;
+  justify-content: center;
+}
+@media screen and (max-width: 1300px) {
+  section .pubConseils {
+    height: auto;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  section .pubConseils {
+    position: relative;
+    margin: 50em 0 10% 0;
+  }
+}
+section .pubConseils h3 {
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@media screen and (max-width: 500px) {
+  section .pubConseils h3 {
+    height: 70px;
+  }
+}
+section .pubConseils .lesVideos {
+  display: flex;
+  justify-content: center;
+  height: 395px;
+}
+@media screen and (max-width: 1300px) {
+  section .pubConseils .lesVideos {
+    flex-direction: column;
+    height: auto;
+    width: auto;
+  }
+}
+@media screen and (max-width: 500px) {
+  section .pubConseils .lesVideos {
+    height: 500px;
+  }
+}
+section .pubConseils .lesVideos video[class*=video_] {
+  width: 100%;
+}
+@media screen and (max-width: 500px) {
+  section .pubConseils .lesVideos video[class*=video_] {
+    width: 100%;
+  }
+}
+section .pubConseils .lesVideos a[class*=playVideo] {
+  position: absolute;
+  top: 40%;
+  bottom: 0;
+  margin: 0 auto;
+  font-size: 70px;
+  color: #F95C55;
+}
+@media screen and (max-width: 500px) {
+  section .pubConseils .lesVideos a[class*=playVideo] img {
+    width: 50px;
+  }
+}
+section .pubConseils .lesVideos .video {
+  width: 536px;
+  justify-content: center;
+  display: flex;
+  height: 374px;
+  margin: auto auto;
+  position: relative;
+}
+@media screen and (max-width: 1024px) {
+  section .pubConseils .lesVideos .video {
+    width: 80%;
+  }
+}
+section .pubConseils a.lesVideos {
+  align-items: center;
+  margin: 0 auto;
+}
+section .pubConseils a.lesVideos:hover {
+  background: #303030;
+  transition: 0.3s;
+}
+@media screen and (max-width: 1024px) {
+  section .pubConseils a.lesVideos {
+    position: absolute;
+    bottom: -37px;
+    left: 0;
+    right: 0;
+  }
+}
+@media screen and (max-width: 500px) {
+  section .pubConseils a.lesVideos {
+    height: 40px;
+    position: initial;
+    margin-top: 15px;
+  }
+}
+section .serviceGarde {
+  width: 100%;
+  background-image: url(../img/garde_urgences.png);
+  height: 608px;
+  position: relative;
+}
+@media screen and (max-width: 660px) {
+  section .serviceGarde {
+    background: none;
+  }
+}
+section .serviceGarde .infoGarde {
+  position: absolute;
+  width: 628px;
+  height: 482px;
+  display: flex;
+  left: 7%;
+  top: 0;
+  bottom: 0;
+  margin: auto auto;
+}
+@media screen and (max-width: 1024px) {
+  section .serviceGarde .infoGarde {
+    left: 0;
+    right: 0;
+  }
+}
+@media screen and (max-width: 660px) {
+  section .serviceGarde .infoGarde {
+    width: 100%;
+  }
+}
+section .serviceGarde .casUrgence {
+  background: #F95C55;
+  width: 264px;
+  height: 482px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  gap: 15px;
+}
+section .serviceGarde .casUrgence img {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+}
+section .serviceGarde .casUrgence p {
+  text-align: center;
+  font-weight: 400;
+  margin: 0 auto;
+  width: 80%;
+  font-size: 12px;
+  color: #ffffff;
+}
+section .serviceGarde .casUrgence span {
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 22px;
+  color: #ffffff;
+  margin: 0 auto;
+}
+section .serviceGarde .numeroGarde {
+  background: #ffffff;
+  width: 364px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+section .serviceGarde .numeroGarde h3 {
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@media screen and (max-width: 500px) {
+  section .serviceGarde .numeroGarde h3 {
+    width: 100%;
+  }
+}
+section .serviceGarde .numeroGarde p.text {
+  font-weight: 400;
+  font-size: 12px;
+  color: #302A2D;
+  width: 80%;
+  margin: 0 auto;
+}
+section .serviceGarde .numeroGarde div[class*=jour_] {
+  margin-left: 10%;
+}
+section .serviceGarde .numeroGarde div[class*=jour_] h5[class*=jour_] {
+  color: #F95C55;
+  font-size: 12px;
+}
+section .serviceGarde .numeroGarde div[class*=jour_] p {
+  color: #302A2D;
+  font-weight: 400;
+  font-size: 15px;
+}
+@media screen and (max-width: 1024px) {
+  section .serviceGarde .numeroGarde {
+    left: 0;
+    right: 0;
+  }
+}
+@media screen and (max-width: 660px) {
+  section .serviceGarde .numeroGarde {
+    background: #f0f0f0;
+  }
+}
+section .sendMess {
+  background: #444444;
+  height: 451px;
+  width: 100%;
+}
+section .sendMess .container {
+  display: flex;
+}
+section .sendMess .container .formulaire_first {
+  width: 50%;
+  height: 451px;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+}
+section .sendMess .container .formulaire {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  width: 50%;
+  margin-left: 14%;
+}
+section .sendMess .container .formulaire h5 {
+  font-weight: 700;
+  font-size: 20px;
+  color: #ffffff;
+}
+section .sendMess .container .formulaire input {
+  background: #ffffff;
+  height: 43px;
+  width: 100%;
+  color: #2D2D2D;
+  font-weight: 500;
+  font-size: 15px;
+  border: none;
+  padding: 0 5%;
+}
+section .sendMess .container .formulaire textarea {
+  resize: none;
+  background: #ffffff;
+  height: 102px;
+}
+section .sendMess .container .formulaire button {
+  width: 100%;
+  align-items: center;
+  height: 43px;
+}
+section .sendMess .container .formulaire button:hover {
+  background: #303030;
+  transition: 0.3s;
+  cursor: pointer;
+}
+section .sendMess .container .personnel {
+  display: flex;
+  width: 50%;
+  justify-content: space-around;
+}
+section .sendMess .container .personnel img {
+  width: 166px;
+  height: 166px;
+}
+section .sendMess .container .personnel div[class*=personnel_] {
+  display: flex;
+  height: 450px;
+  justify-content: center;
+  flex-direction: column;
+}
+section .sendMess .container .personnel div[class*=personnel_] div[class*=img_] {
+  position: relative;
+  width: 244px;
+  height: 243px;
+  background-image: url(../img/personnel1.png);
+}
+section .sendMess .container .personnel div[class*=personnel_] div[class*=img_] img[class*=personnel_] {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 5%;
+  bottom: 0;
+  margin: auto auto;
+}
+section .sendMess .container .personnel div[class*=personnel_] p {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 18px;
+}
+section .sendMess .container .personnel div[class*=personnel_] span {
+  color: #F95C55;
+  font-weight: 400;
+  font-size: 14px;
+}
+@media screen and (max-width: 1300px) {
+  section .sendMess .container {
+    width: 100%;
+    text-align: center;
+    left: 0;
+    right: 0;
+    position: initial;
+  }
+}
+@media screen and (max-width: 1300px) {
+  section .sendMess .container {
+    flex-direction: column;
+    height: auto;
+  }
+  section .sendMess .container .formulaire_first {
+    width: 100%;
+    margin-top: 6%;
+    flex-direction: row;
+  }
+  section .sendMess .container .formulaire_first .formulaire {
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 1300px) and (max-width: 660px) {
+  section .sendMess .container .formulaire_first .formulaire {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 1300px) {
+  section .sendMess .container .personnel {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 1300px) and (max-width: 660px) {
+  section .sendMess .container .personnel {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 1300px) {
+  section .sendMess .container .personnel div[class*=personnel_] {
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 1300px) {
+  section .sendMess {
+    height: auto;
+  }
+}
+
+footer .footerFirst .footerInfo .galerie, footer .footerFirst .footerInfo .conseils, footer .footerFirst .footerInfo .propos .Propos, footer .footerFirst .footerInfo .horaire {
+  width: 25%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+footer .footerFirst {
+  width: 100%;
+  height: 524px;
+  background: #222222;
+  display: flex;
+  flex-direction: column;
+}
+footer .footerFirst h6[class*=sousTitre_] {
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 18px;
+}
+footer .footerFirst a,
+footer .footerFirst p {
+  color: #777777;
+  font-weight: 400;
+  font-size: 12px;
+}
+footer .footerFirst img[class*=galerie_] {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+}
+@media screen and (max-width: 660px) {
+  footer .footerFirst img[class*=galerie_] {
+    width: 100px;
+    height: 100px;
+  }
+}
+@media screen and (max-width: 500px) {
+  footer .footerFirst img[class*=galerie_] {
+    width: 120px;
+    height: 120px;
+  }
+}
+footer .footerFirst .imgLogo {
+  width: 309px;
+  height: 50%;
+  margin: 0 auto;
+}
+footer .footerFirst .footerInfo {
+  display: flex;
+  height: 300px;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 0 20px 0 20px;
+}
+footer .footerFirst .footerInfo .horaire {
+  gap: 25px;
+}
+footer .footerFirst .footerInfo .horaire button {
+  width: 260px;
+  height: 69px;
+}
+@media screen and (max-width: 660px) {
+  footer .footerFirst .footerInfo .horaire button {
+    align-items: center;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 1024px) {
+  footer .footerFirst .footerInfo .horaire {
+    width: 100%;
+  }
+}
+footer .footerFirst .footerInfo .propos {
+  display: flex;
+  justify-content: center;
+  width: 30%;
+}
+footer .footerFirst .footerInfo .propos .Propos {
+  width: 55%;
+}
+@media screen and (max-width: 1024px) {
+  footer .footerFirst .footerInfo .propos {
+    width: 100%;
+    padding-left: 12px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  footer .footerFirst .footerInfo .conseils {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  footer .footerFirst .footerInfo .galerie {
+    width: 50%;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 1024px) {
+  footer .footerFirst .footerInfo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: auto;
+    row-gap: 30px;
+  }
+}
+@media screen and (max-width: 660px) {
+  footer .footerFirst .footerInfo {
+    height: auto;
+    flex-direction: column;
+    display: flex;
+    text-align: center;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  footer .footerFirst {
+    height: auto;
+  }
+}
+footer .footerLast {
+  width: 100%;
+  height: 93px;
+  background: #303030;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+footer .footerLast .auteur {
+  display: flex;
+  gap: 12px;
+  width: 50%;
+  height: 33px;
+}
+footer .footerLast .auteur p {
+  font-weight: 700;
+  font-size: 12px;
+  width: 30%;
+  color: #DDDDDD;
+}
+@media screen and (max-width: 1024px) {
+  footer .footerLast .auteur p {
+    width: 50%;
+    align-items: center;
+    height: 33px;
+    display: flex;
+  }
+}
+@media screen and (max-width: 1024px) {
+  footer .footerLast .auteur {
+    order: 2;
+    width: 100%;
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 500px) {
+  footer .footerLast .auteur {
+    width: 140%;
+  }
+}
+footer .footerLast .liens {
+  display: flex;
+  gap: 7%;
+  width: 50%;
+  text-transform: uppercase;
+}
+footer .footerLast .liens a {
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 11px;
+}
+footer .footerLast .liens a:hover {
+  color: #F95C55;
+  transition: 0.3s;
+}
+@media screen and (max-width: 1024px) {
+  footer .footerLast .liens {
+    width: 100%;
+    justify-content: center;
+    order: 1;
+    gap: 10px;
+  }
+}
+@media screen and (max-width: 500px) {
+  footer .footerLast .liens {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 1024px) {
+  footer .footerLast {
+    flex-direction: column;
+    justify-content: space-around;
+    height: auto;
+  }
+}

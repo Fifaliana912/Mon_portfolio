@@ -1,0 +1,59 @@
+@media screen and (max-width:1024px) {
+    header {
+        .container {
+            position: relative;
+        }
+
+        .img {
+            z-index: 1;
+        }
+
+        span.icon-bars {
+            display: block !important;
+        }
+
+        nav ul {
+            position: absolute;
+            z-index: 2;
+            display: block;
+            border-radius: 5px;
+            justify-content: center;
+            flex-direction: column;
+            transform: translateY(-500px);
+            left: 0;
+            position: fixed;
+            padding: 0 7%;
+            height: 250px;
+            background: #F0F0F0;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .contact_phone {
+            display: none !important;
+        }
+    }
+
+    section {
+        .pubVideo {
+            flex-direction: column;
+            text-align: center;
+            gap: 10px;
+        }
+    }
+}
+
+body.sidebar {
+    nav ul {
+        transform: translateY(0px);
+        transition: 0.5s;
+    }
+}
+
+@media screen and (max-width:500px) {
+    header {
+        nav ul {
+            transform: translateY(-1000px);
+            text-align: center;
+        }
+    }
+}

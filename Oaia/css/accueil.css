@@ -1,0 +1,304 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    padding: 0 16px;
+    margin: 0 auto;
+    width: 1360px;
+    height: auto;
+}
+
+header.nav{
+    border-bottom: 1px solid #E0E0E0;
+    width: 100%;
+}
+header.nav .navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 78px;
+    padding: 16px;
+}
+header.nav .logo{
+    display: flex;
+}
+header.nav .logo p.logo{
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 23px;
+    margin-left: 10px;
+}
+
+header.nav form.search{
+    width: 273px;
+    height: 44px;
+    display: flex;
+    color: #555;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    background-color: #E0E0E0;
+    border-radius: 22px;
+}
+button[type="submit"] {
+    text-indent: -999px;
+    overflow: hidden;
+    width: 40px;
+    padding: 0;
+    margin: 0;
+    border: 1px solid transparent;
+    border-radius: inherit;
+    background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat center;
+    cursor: pointer;
+    opacity: 0.7;
+  }
+input[type="search"] {
+    border: none;
+    background: transparent;
+    margin: 0;
+    padding: 7px 8px;
+    font-size: 14px;
+    color: inherit;
+    border: 1px solid transparent;
+    border-radius: inherit;
+  }
+input[type="search"]::placeholder {
+    color: #bbb;
+  }
+  
+header.nav .btn button.event{
+    border: 1px solid #707070;
+    height: 44px;
+    width: 192px;
+    background: transparent;
+    cursor: pointer;
+}
+header.nav .btn button.event:hover{
+    background-color: #621366;
+    color: #FFFFFF;
+    transition: 1s;
+    font-weight: bold;
+}
+header.nav .btn button.connect{
+    border:0;
+    border-radius: 6px;
+    height: 44px;
+    width: 126px;
+    background-color: #621366;
+    color: #FFFFFF;
+    font-size: 16px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+header.nav .btn button.connect:hover{
+    transform: scale(1.1);
+    transition: 1s;
+}
+header.nav .menu_home{
+    display: none;
+}
+
+
+
+
+section.home{
+    display: flex;
+    padding: 16px;
+}
+section.home .sidebar{
+    height: 101px;
+    display: flex;
+    flex-direction: column;
+    width: 176px;
+    gap: 15px;
+    position: absolute;
+}
+select[id*="side_"]{
+    appearance: none;
+    text-align: center;
+    height: 44px;
+    border-radius: 6px;
+    border:1px solid #E0E0E0;
+    color: #E0E0E0;
+}
+section.home select#side_1{
+    background: url(../img/Icon\ material-location-on.png)left 5px center no-repeat,
+    url(../img/Icon\ awesome-angle-down.png)right 10px center no-repeat;
+}
+section.home select#side_2{
+    background: url(../img/Icon\ material-date-range.png)left 5px center no-repeat,
+    url(../img/Icon\ awesome-angle-down.png)right 10px center no-repeat;
+}
+
+
+section.home .articles{
+    display: block;
+    height: 664px;
+    width: 570px;
+    margin: 0 auto;
+}
+section.home .articles h4.plane{
+    line-height: 2.5;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000000;
+}
+div[class*=article_]{
+    display: flex;
+    gap: 20px;
+    font-size: 16px;
+    font-family: 'Figtree';
+}
+
+section.home .articles #article_1 p.title{
+    color: #000000;
+    line-height: 1.5;
+}
+section.home .articles #article_1 span.date{
+    color: #9B9CA0;
+    line-height: 1.7;
+}
+section.home .articles #article_1 p.subject{
+    width: 100%;
+}
+section.home .articles #article_1 p.ticket{
+    line-height: 2.;
+}
+section.home .articles #article_1 p.ticket span.ticket{
+    color:#FB5A5F ;
+    font-weight: 600;
+    line-height: 2.5;
+}
+section.home .articles #article_1 button.consult{
+    height: 44px;
+    width: 273px;
+    border-radius: 6px;
+    border-color: #FB5A5F;
+    color: #FB5A5F;
+    background-color: transparent;
+}
+section.home .articles .article_2{
+    margin-top: 47px;
+}  
+
+
+.menu{
+    height: 57px;
+    width: 417px;
+    display: none;
+    border-color: #E0E0E0;
+}
+.menu ul{
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.menu ul a.search{
+    height: 25px;
+    width: 25px;
+    color: #161823;
+}
+button[class*=home]{
+    width: 44px;
+    height: 38px;
+    background-color: #000000;
+    border-radius: 7px;
+    color: #E0E0E0;
+    border: 0;
+    font-size: 20px;
+}
+
+
+@media screen and (max-width:1366px) {
+    .container{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:1024px) {
+    header.nav .navbar form, .btn{
+        display: none;
+    }
+    header.nav .navbar .menu_home{
+        display: flex;
+        align-items: center;
+        gap: 5rem;
+        font-size: 20px;
+    }
+    header.nav .navbar .menu_home a{
+        color: #000000;
+    }
+
+    section.home .sidebar{
+        display: none;
+    }
+    section.home .articles{
+        margin: 0;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:500px) {
+    header.nav .navbar form, .btn{
+        display: none;
+    }
+    header.nav .navbar .menu_home{
+        display: none;
+    }
+    section.home .sidebar{
+        display: none;
+    }
+    section.home .articles{
+        width: 100%;
+    }
+    section.home .articles .article_1, .article_2 img{
+        width: 157px;
+        height: 162px;
+    }
+    div[class*=consult]{
+        position: relative;
+        right: 65%;
+        padding: 16px 0;
+    }
+    button[class*=consult]{
+        position: static;
+    }
+    section.home .articles .article_2{
+        padding: 30% 0;
+    }
+    .menu{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        position: fixed;    
+        border: 1px solid #E0E0E0;  
+        z-index: 7; 
+    }
+}
+
+
+
+
+    
