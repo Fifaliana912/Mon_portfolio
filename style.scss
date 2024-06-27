@@ -21,9 +21,11 @@ body.sidebar {
     }
   }
 }
-html{
+
+html {
   scroll-behavior: smooth;
 }
+
 body {
   overflow-x: hidden;
   background: #040f16;
@@ -277,7 +279,7 @@ main.services {
   gap: 39px;
   width: 1360px;
   height: 550px;
-  padding: 16px;
+  padding: 16px 0;
   margin: 8% auto;
   text-align: center;
   box-shadow: 2px 4px 30px 10px rgba(6, 26, 64, 0.5);
@@ -673,7 +675,8 @@ main.services {
     }
   }
 }
-footer{
+
+footer {
   margin: 0 auto;
   width: 1360px;
   display: flex;
@@ -682,19 +685,21 @@ footer{
   gap: 20px;
   text-align: center;
 
-  .reseau{
+  .reseau {
     display: flex;
     gap: 15px;
-    a{
-      img{
+
+    a {
+      img {
         width: 35px;
         height: 35px;
       }
     }
   }
-  p{
+
+  p {
     font-size: 25px;
-    font-weight:  Italic;
+    font-weight: Italic;
     color: #eff2f18c;
   }
 }
@@ -853,7 +858,8 @@ footer{
       }
     }
   }
-  footer{
+
+  footer {
     width: 100%;
   }
 }
